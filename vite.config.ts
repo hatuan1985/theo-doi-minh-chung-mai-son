@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: './',
+    base: '/theo-doi-minh-chung-mai-son/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
