@@ -7,7 +7,6 @@ import {
   File,
   FileSpreadsheet,
   FileText,
-  Folder,
   RefreshCw,
   Search,
   Upload,
@@ -373,14 +372,7 @@ export default function TeacherPortal({
               )}
 
               <h3 className="text-xs sm:text-sm font-black text-slate-500 uppercase tracking-wider">Bước 2: Tải tệp minh chứng</h3>
-              <div className="p-3.5 bg-emerald-50 border border-emerald-200 rounded-2xl flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs">
-                <div className="flex items-center gap-2">
-                  <Folder className="h-5 w-5 text-amber-600" />
-                  <div><strong className="text-emerald-950">Đích lưu trữ: Google Drive nhà trường</strong><p className="text-emerald-700 mt-0.5">Không cần đăng nhập Google.</p></div>
-                </div>
-              </div>
-
-              <div onClick={() => fileInputRef.current?.click()} onDragOver={e => e.preventDefault()} onDrop={e => { e.preventDefault(); if (e.dataTransfer.files[0]) validateFile(e.dataTransfer.files[0]); }} className="border-2 border-dashed border-slate-200 hover:border-emerald-500 rounded-2xl p-8 text-center cursor-pointer bg-slate-50/50">
+                  <div onClick={() => fileInputRef.current?.click()} onDragOver={e => e.preventDefault()} onDrop={e => { e.preventDefault(); if (e.dataTransfer.files[0]) validateFile(e.dataTransfer.files[0]); }} className="border-2 border-dashed border-slate-200 hover:border-emerald-500 rounded-2xl p-8 text-center cursor-pointer bg-slate-50/50">
                 <input ref={fileInputRef} type="file" className="hidden" accept=".pdf,.png,.jpg,.jpeg,.doc,.docx,.xls,.xlsx,.csv" onChange={e => e.target.files?.[0] && validateFile(e.target.files[0])} />
                 {file ? (
                   <div className="space-y-3">
